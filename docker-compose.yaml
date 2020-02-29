@@ -1,0 +1,36 @@
+# v2 syntax
+version: "2"
+
+# Named volumes
+volumes:
+    # MySQL Data
+    dv-db:
+        driver: local
+
+services:
+    # MySQL (5.7)
+    db:
+        image: mysql:5.7
+        container_name: dv-db
+        volumes:
+            - dv-db:/var/lib/mysql
+        ports:
+            - "13306:3306"
+        environment:
+            - MYSQL_ROOT_PASSWORD=deutsch
+            - MYSQL_DATABASE=deutsch
+            - MYSQL_USER=deutsch
+            - MYSQL_PASSWORD=deutsch
+    # Backend
+    api:
+        image: ambientum/php:7.3-nginx
+        container_name: dv-api
+        volumes:
+            - .:/var/www/app
+            - ./99_xdebug.ini:/etc/php7/conf.d/99_xdebug.ini
+        environment:
+            - XDEBUG_ENABLED=true
+        ports:
+            - "8080:8080"
+        links:
+            - db
