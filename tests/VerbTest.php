@@ -23,11 +23,11 @@ class VerbTest extends TestCase
     {
         $result = $this->verb->getVerbsStartingWith('a');
 
-        $this->assertCount(2, $result);
+        var_dump($result);
+
+        $this->assertCount(3, $result);
 
         $this->assertEquals('aalen', $result[0]['data']);
         $this->assertEquals('aasen', $result[1]['data']);
-
-        var_dump($result);
     }
 }

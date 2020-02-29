@@ -21,12 +21,13 @@ class Verb
         $parsedResult = [];
 
         foreach ($result as $verb) {
-            if (!$verb['type']) {
-                $parsedResult[] = $verb;
-            }
+            $parsedResult[$verb['verb']] = [
+                'verb' => $verb['verb'],
+                'langid' => $verb['langid']
+            ];
         }
 
-        return $parsedResult;
+        return array_values($parsedResult);
     }
 
     private function get(string $path)

@@ -22,38 +22,27 @@ composer require marciodojr/german-verbs
 
     // result contains
     /*
-        array(2) {
+        array(3) {
         [0] =>
-        array(6) {
+        array(2) {
             'verb' =>
-            string(5) "aalen"
-            'data' =>
             string(5) "aalen"
             'langid' =>
             int(13)
-            'type' =>
-            int(0)
-            't' =>
-            int(0)
-            'a' =>
-            array(0) {
-            }
         }
         [1] =>
-        array(6) {
+        array(2) {
             'verb' =>
-            string(5) "aasen"
-            'data' =>
             string(5) "aasen"
             'langid' =>
             int(13)
-            'type' =>
-            int(0)
-            't' =>
-            int(0)
-            'a' =>
-            array(0) {
-            }
+        }
+        [2] =>
+        array(2) {
+            'verb' =>
+            string(7) "abaasen"
+            'langid' =>
+            int(13)
         }
         }
     */
