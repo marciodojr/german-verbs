@@ -23,11 +23,18 @@ class VerbTest extends TestCase
     {
         $result = $this->verb->getVerbsStartingWith('a');
 
-        var_dump($result);
+        // var_dump($result);
 
         $this->assertCount(3, $result);
 
         $this->assertEquals('aalen', $result[0]['data']);
         $this->assertEquals('aasen', $result[1]['data']);
+    }
+
+    public function testFindVerbDetails()
+    {
+        $result = $this->verb->getDetails('hören');
+
+        $this->assertArrayHasKey('p1', $result);
     }
 }

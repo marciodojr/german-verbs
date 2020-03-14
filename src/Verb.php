@@ -16,7 +16,7 @@ class Verb
     public function getVerbsStartingWith(string $verbPrefix)
     {
         $path = sprintf('/db/verbindex/13/%s', $verbPrefix);
-        $result = $this->get($path);
+        $result = $this->getJson($path);
 
         $parsedResult = [];
 
@@ -30,7 +30,7 @@ class Verb
         return array_values($parsedResult);
     }
 
-    private function get(string $path)
+    private function getJson(string $path)
     {
         $response = $this->client->get($path);
 
@@ -39,5 +39,13 @@ class Verb
         }
 
         return [];
+    }
+
+    public function getDetails(string $verb)
+    {
+        $path = sprintf('/conjugator/iv1/ab8e7bb5-9ac6-11e7-ab6a-00089be4dcbc/1/13/113/%s', $verb);
+        $result = $this->getJson($path);
+
+        return $result;
     }
 }
