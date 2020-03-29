@@ -48,4 +48,12 @@ class Verb
 
         return $result;
     }
+
+    public function getTranslations(string $verb)
+    {
+        $path = sprintf('/translator/iv2/52ecc57c-4b90-11e7-ae0f-00089be4dcbc/deu/eng/%s', $verb);
+        $result = $this->getJson($path);
+
+        return $result;
+    }
 }

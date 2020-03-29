@@ -37,4 +37,11 @@ class VerbTest extends TestCase
 
         $this->assertArrayHasKey('p1', $result);
     }
+
+    public function testFindVerbTranslations()
+    {
+        $result = $this->verb->getTranslations('schlagen');
+
+        $this->assertArrayHasKey('p1', $result);
+    }
 }
